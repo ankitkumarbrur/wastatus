@@ -22,5 +22,5 @@ from pages.views import button_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
-    path('button/', button_view, name='button')
+    path('button/', button_view, name='button'),
 ]
