@@ -13,13 +13,14 @@ import os
 
 chrome_options = webdriver.ChromeOptions()
 # chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-# chrome_options.add_argument("user-agent=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36")
+chrome_options.add_argument("user-agent=User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36")
 chrome_options.add_argument("--headless")
 # chrome_options.add_argument("--window-size=1280x722")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 
-driver = webdriver.Chrome('chromedriver.exe',options=chrome_options)
+# driver = webdriver.Chrome(r'C:\Users\Ankit\Documents\Django\projects\wastatus\wastatus\chromedriver.exe',options=chrome_options)
+driver = webdriver.Chrome(r'~/wastatus/wastatus/chromedriver.exe',options=chrome_options)
 
 driver.get('https://web.whatsapp.com')
 
