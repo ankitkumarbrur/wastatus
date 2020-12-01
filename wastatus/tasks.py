@@ -20,7 +20,7 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 
 # driver = webdriver.Chrome(r'C:\Users\Ankit\Documents\Django\projects\wastatus\wastatus\chromedriver.exe',options=chrome_options)
-driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome(executable_path=r"/usr/local/lib/chromedriver",options=chrome_options)
 
 driver.get('https://web.whatsapp.com')
 
