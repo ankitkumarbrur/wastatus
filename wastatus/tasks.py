@@ -15,9 +15,7 @@ print('Background Task')
 
 file = open('/home/ak248100/wastatus/file.txt', 'a')
 
-while(True):
-    file.write('background\n')
-    time.sleep(2)
+file.write('background\n')
 
 file.close()
 
