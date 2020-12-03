@@ -13,6 +13,10 @@ import os
 
 print('Background Task')
 
+file = ('file.txt', 'a')
+file.write('background\n')
+file.close()
+
 @background(schedule = 0)
 def fun():
     print('BACKGROUND TASK')
