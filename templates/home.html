@@ -7,8 +7,6 @@
 </head>
 <body>
     <button onclick="location.href= '{% url 'button' %}'" >BACKGROUND TASKS</button> <hr>
-    {% if out  %}
-        <h1> print(out)</h1>
-    {% endif %}
+    {{print(out)}}
 </body>
 </html>
