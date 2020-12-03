@@ -20,13 +20,15 @@ options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--no-sandbox')
 
 # driver = webdriver.Chrome(r'C:\Users\Ankit\Documents\Django\projects\wastatus\wastatus\chromedriver.exe',options=chrome_options)
-driver = webdriver.Chrome('chromedriver',options=options)
+driver = webdriver.Chrome('/home/ak248100/wastatus/wastatus/chromedriver',options=options)
 
-driver.get('https://web.whatsapp.com')
+file = open('file.txt','r')
+file.close()
+# driver.get('https://web.whatsapp.com')
 
-el = driver.find_elements_by_class_name('landing-main')
+# el = driver.find_elements_by_class_name('landing-main')
 
-el[0].screenshot("./screenshot.png")
+# el[0].screenshot("./screenshot.png")
 
 @background(schedule = 0)
 def fun():
