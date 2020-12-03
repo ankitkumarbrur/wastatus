@@ -23,6 +23,7 @@ options.add_argument('--no-sandbox')
 driver = webdriver.Chrome('/home/ak248100/wastatus/wastatus/chromedriver',options=options)
 
 file = open('file.txt','r')
+file.write("I am running in background")
 file.close()
 # driver.get('https://web.whatsapp.com')
 
