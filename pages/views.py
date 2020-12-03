@@ -12,5 +12,5 @@ def home_view(request):
     return render(request,'home.html',{})
 
 def button_view(request):
-    subprocess.Popen("source /home/ak248100/wastatus/my_env/bin/activate && python3 /home/ak248100/wastatus/manage.py process_tasks", shell=True)
+    subprocess.Popen("cd /home/ak248100/wastatus/my_env/bin/activate ", shell=True)
     return render(request,'home.html',{})
