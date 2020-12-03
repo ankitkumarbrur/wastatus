@@ -13,7 +13,7 @@ import os
 
 print('Background Task')
 
-file = open('~/wastatus/file.txt', 'a')
+file = open('/home/ak248100/wastatus/file.txt', 'a')
 file.write('background\n')
 file.close()
 
