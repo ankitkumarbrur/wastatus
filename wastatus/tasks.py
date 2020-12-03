@@ -21,4 +21,9 @@ file.close()
 
 @background(schedule = 0)
 def fun():
-    print('BACKGROUND TASK')
+    t = 0
+    while(t<=10):
+        file.write('background\n')
+        t+=1
+        time.sleep(2)
+    file.close()
