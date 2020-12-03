@@ -22,9 +22,9 @@ import os
 # driver = webdriver.Chrome(r'C:\Users\Ankit\Documents\Django\projects\wastatus\wastatus\chromedriver.exe',options=chrome_options)
 # driver = webdriver.Chrome('/home/ak248100/wastatus/wastatus/chromedriver',options=options)
 
-file = open('file.txt','a')
-file.write("I am running in background")
-file.close()
+# file = open('file.txt','a')
+# file.write("I am running in background")
+# file.close()
 # driver.get('https://web.whatsapp.com')
 
 # el = driver.find_elements_by_class_name('landing-main')
