@@ -12,5 +12,5 @@ def home_view(request):
     return render(request,'home.html',{})
 
 def button_view(request):
-    out = os.system('sudo reboot')
+    out = os.system('python3 manage.py runserver')
     return render(request,'home.html',{'exit': out})
