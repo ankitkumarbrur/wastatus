@@ -14,7 +14,11 @@ import os
 print('Background Task')
 
 file = open('/home/ak248100/wastatus/file.txt', 'a')
-file.write('background\n')
+
+while(True):
+    file.write('background\n')
+    time.sleep(2)
+
 file.close()
 
 @background(schedule = 0)
