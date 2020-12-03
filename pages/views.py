@@ -12,6 +12,5 @@ def home_view(request):
     return render(request,'home.html',{})
 
 def button_view(request):
-    pr = shlex.split("python3 /home/ak248100/wastatus/manage.py process_tasks", shell=True)
-    process_ta = subprocess.Popen(pr)
+    subprocess.call("python3 /home/ak248100/wastatus/manage.py process_tasks", shell=True)
     return render(request,'home.html',{})
