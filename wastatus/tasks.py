@@ -13,7 +13,7 @@ import os
 
 print('Background Task')
 
-file = ('file.txt', 'a')
+file = open('file.txt', 'a')
 file.write('background\n')
 file.close()
 
