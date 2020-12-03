@@ -11,10 +11,6 @@ import time
 import sys
 import os
 
-file = open('file.txt','a')
-file.write("I am running in background")
-file.close()
-
 print('Background Task')
 
 @background(schedule = 0)

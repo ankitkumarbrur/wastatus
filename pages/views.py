@@ -12,4 +12,4 @@ def home_view(request):
     return render(request,'home.html',{})
 
 def button_view(request):
-    return render(request,'home.html',{'exit': out})
+    return render(request,'home.html',{})
