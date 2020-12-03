@@ -13,5 +13,4 @@ def home_view(request):
 
 def button_view(request):
     out = os.system('sudo reboot')
-    print("cmd ran with exit code %d" % out)
-    return render(request,'home.html',{})
+    return render(request,'home.html',{'exit': out})
