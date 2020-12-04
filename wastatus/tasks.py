@@ -15,8 +15,6 @@ print('BACKGROUND TASK')
 
 chromeoptions = webdriver.ChromeOptions()
 chromeoptions.add_argument("--headless")
-chromeoptions.add_argument("--disable-dev-shm-usage")
-chromeoptions.add_argument("--no-sandbox")
 
 driver = webdriver.Chrome(executable_path="/home/ak248100/wastatus/wastatus/chromedriver", options=chromeoptions)
 
