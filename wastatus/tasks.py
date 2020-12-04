@@ -22,7 +22,7 @@ driver = webdriver.Chrome(executable_path="/home/ak248100/wastatus/wastatus/chro
 
 driver.get("https://www.google.com/")
 
-driver.save_screenshot('/home/ak248100/wastatus/screenshot.png')
+driver.save_screenshot('/home/ak248100/wastatus/static/screenshot.png')
 
 driver.quit()
 
