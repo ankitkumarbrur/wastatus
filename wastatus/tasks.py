@@ -13,9 +13,7 @@ import os
 
 print('Background Task')
 
-file = open('/home/ak248100/wastatus/file.txt', 'a')
-
-file.write('background\n')
+file = open('/home/ak248100/wastatus/test.txt', 'a')
 
 file.close()
 
@@ -26,6 +24,6 @@ def fun():
     file = open('/home/ak248100/wastatus/file.txt', 'a')
     while (t <= 10):
         t = t+1
-        file.write('background from fun\n' + str(t))
+        file.write('\nbackground from fun' + str(t))
         time.sleep(2)
     file.close()
