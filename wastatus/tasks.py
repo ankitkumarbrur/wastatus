@@ -11,11 +11,20 @@ import time
 import sys
 import os
 
-print('Background Task')
+print('BACKGROUND TASK')
 
-file = open('/home/ak248100/wastatus/test.txt', 'a')
+chromeoptions = webdriver.ChromeOptions()
+chromeoptions.add_argument("--headless")
+chromeoptions.add_argument("--disable-dev-shm-usage")
+chromeoptions.add_argument("--no-sandbox")
 
-file.close()
+driver = webdriver.Chrome(executable_path="/home/ak248100/wastatus/wastatus/chromedriver", options=chromeoptions)
+
+driver.get("www.google.com")
+
+driver.save_screenshot('/home/ak248100/wastatus/screenshot.png')
+
+driver.quit()
 
 @background(schedule = 0)
 def fun():
