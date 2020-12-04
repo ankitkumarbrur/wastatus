@@ -22,6 +22,10 @@ file.close()
 @background(schedule = 0)
 def fun():
     print('FUN')
+    t = 0
     file = open('/home/ak248100/wastatus/file.txt', 'a')
-    file.write('background from fun\n')
+    while(t>10):
+        t+=1
+        file.write('background from fun\n' + str(t))
+        time.sleep(2)
     file.close()
