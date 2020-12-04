@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +9,6 @@
 </head>
 <body>
     <button onclick="location.href= '{% url 'button' %}'" >BACKGROUND TASKS</button> <hr>
+    <img src="{% static 'screenshot.png' %}" alt="My image"/>
 </body>
 </html>
