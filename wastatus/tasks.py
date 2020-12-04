@@ -26,5 +26,6 @@ def fun():
     file = open('/home/ak248100/wastatus/file.txt', 'a')
     while (t <= 10):
         t = t+1
-        file.write('background from fun\n')
+        file.write('background from fun\n' + str(t))
+        time.sleep(2)
     file.close()
