@@ -13,10 +13,12 @@ import os
 
 print('BACKGROUND TASK')
 
-chromeoptions = webdriver.ChromeOptions()
-chromeoptions.add_argument("--headless")
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
 
-driver = webdriver.Chrome(executable_path="/home/ak248100/wastatus/wastatus/chromedriver", options=chromeoptions)
+driver = webdriver.Chrome(executable_path="/home/ak248100/wastatus/wastatus/chromedriver", options=chrome_options)
 
 driver.get("www.google.com")
 
