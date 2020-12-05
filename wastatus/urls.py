@@ -19,11 +19,13 @@ from django.urls import path
 from pages.views import home_view
 from pages.views import qr_view
 from pages.views import current_view
+from pages.views import background_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('qr/', qr_view, name='qr'),
     path('screen/',current_view, name='screen'),
-    path('tracking/',current_view, name='tracking')
+    path('tracking/',current_view, name='tracking'),
+    path('back/',current_view, name='back')
 ]
