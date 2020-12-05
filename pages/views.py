@@ -21,4 +21,4 @@ def qr_view(request):
 
 def current_view(request):
     current_screen()
-    return render(request,'home.html',{})
+    return render(request,'screen.html',{})
