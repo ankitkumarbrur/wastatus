@@ -27,5 +27,5 @@ urlpatterns = [
     path('qr/', qr_view, name='qr'),
     path('screen/',current_view, name='screen'),
     path('tracking/',current_view, name='tracking'),
-    path('back/',current_view, name='back')
+    path('back/',background_view, name='back')
 ]
