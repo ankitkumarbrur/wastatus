@@ -13,5 +13,5 @@ def home_view(request):
 
 def button_view(request):
     subprocess.Popen(". /home/ak248100/wastatus/my_env/bin/activate && python3 /home/ak248100/wastatus/manage.py process_tasks", shell=True)
-    fun()
+    fun(request)
     return render(request,'home.html',{})
