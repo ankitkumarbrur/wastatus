@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('qr/', qr_view, name='qr'),
-    path('screen/',current_view, name='screen')
+    path('screen/',current_view, name='screen'),
+    path('tracking/',current_view, name='tracking')
 ]

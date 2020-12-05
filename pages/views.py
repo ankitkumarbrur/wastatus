@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from wastatus.tasks import load_qr
 from wastatus.tasks import current_screen
+from wastatus.tasks import start_tracking
 
 import subprocess
 import shlex
