@@ -5,10 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="expires" content="0">
     <title>Home</title>
 </head>
 <body>
-    <button onclick="location.href= '{% url 'button' %}'" >BACKGROUND TASKS</button> <hr>
+    <button onclick="location.href= '{% url 'button' %}'" >Load screenshot</button> <hr>
     <img src="{% static 'screenshot.png' %}" alt="My image"/>
 </body>
 </html>

@@ -27,12 +27,7 @@ def fun():
     driver.get("https://web.whatsapp.com/")
 
     time.sleep(2)
-
-    if os.path.exists("/home/ak248100/wastatus/static/screenshot.png"):
-        os.remove("/home/ak248100/wastatus/static/screenshot.png")
-    else:
-        print("The file does not exist")
-
+    
     driver.save_screenshot('/home/ak248100/wastatus/static/screenshot.png')
 
     time.sleep(100)
