@@ -11,6 +11,8 @@ import time
 import sys
 import os
 
+from django.shortcuts import render
+
 print('BACKGROUND TASK')
 
 chrome_options = webdriver.ChromeOptions()
@@ -22,12 +24,14 @@ chrome_options.add_argument("--no-sandbox")
 driver = webdriver.Chrome(executable_path="/home/ak248100/wastatus/wastatus/chromedriver", options=chrome_options)
 
 @background(schedule = 0)
-def fun():
+def fun(request):
     print('FUN')
     driver.get("https://web.whatsapp.com/")
 
-    time.sleep(5)
+    time.sleep(2)
 
     driver.save_screenshot('/home/ak248100/wastatus/static/screenshot.png')
 
     driver.quit()
+    
+    return render(request,'home.html',{})
