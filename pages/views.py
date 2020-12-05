@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from wastatus.tasks import load_qr
+from wastatus.tasks import current_screen
 
 import subprocess
 import shlex
@@ -16,4 +17,8 @@ def home_view(request):
 def qr_view(request):
     load_qr()
     time.sleep(5)
+    return render(request,'home.html',{})
+
+def current_view(request):
+    current_screen()
     return render(request,'home.html',{})

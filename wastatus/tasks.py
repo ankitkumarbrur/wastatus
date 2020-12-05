@@ -32,4 +32,6 @@ def load_qr():
 
     ele[0].screenshot("/home/ak248100/wastatus/static/screenshot.png")
 
-    
+@background(schedule = 0)
+def current_screen():
+    driver.save_screenshot("/home/ak248100/wastatus/static/screenshot.png")

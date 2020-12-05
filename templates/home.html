@@ -9,7 +9,9 @@
     <title>Home</title>
 </head>
 <body>
-    <button onclick="location.href= '{% url 'qr' %}'" >QR Code</button> <hr>
+    <h1 style="text-align: center;">WHATSAPP TRACKER</h1> <hr>
+    <button onclick="location.href= '{% url 'qr' %}'" >QR Code</button> 
+    <button onclick="location.href= '{% url 'screen' %}'" >Current Screen</button> <hr>
     <img src="{% static 'screenshot.png' %}" alt="My image"/>
 </body>
 </html>
