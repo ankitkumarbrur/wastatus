@@ -6,6 +6,7 @@ import subprocess
 import shlex
 
 import os
+import time
 
 # Create your views here.
 def home_view(request):
@@ -13,5 +14,6 @@ def home_view(request):
 
 def button_view(request):
     subprocess.Popen(". /home/ak248100/wastatus/my_env/bin/activate && python3 /home/ak248100/wastatus/manage.py process_tasks", shell=True)
-    fun(request)
+    fun()
+    time.sleep(5)
     return render(request,'home.html',{})
