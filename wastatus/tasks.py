@@ -22,10 +22,14 @@ chrome_options.add_argument("--no-sandbox")
 driver = webdriver.Chrome(executable_path="/home/ak248100/wastatus/wastatus/chromedriver", options=chrome_options)
 
 @background(schedule = 0)
-def fun():
-    print('FUN')
+def load_qr():
+    print('LOAD QR')
     driver.get("https://web.whatsapp.com/")
 
     time.sleep(2)
     
-    driver.save_screenshot('/home/ak248100/wastatus/static/screenshot.png')
+    ele = driver.find_elements_by_class_name('landing-main')
+
+    ele[0].screenshot("/home/ak248100/wastatus/static/screenshot.png")
+
+    

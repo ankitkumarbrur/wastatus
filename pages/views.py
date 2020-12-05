@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from wastatus.tasks import fun
+from wastatus.tasks import load_qr
 
 import subprocess
 import shlex
@@ -13,7 +13,7 @@ def home_view(request):
     subprocess.Popen(". /home/ak248100/wastatus/my_env/bin/activate && python3 /home/ak248100/wastatus/manage.py process_tasks", shell=True)
     return render(request,'home.html',{})
 
-def button_view(request):
-    fun()
+def qr_view(request):
+    load_qr()
     time.sleep(5)
     return render(request,'home.html',{})

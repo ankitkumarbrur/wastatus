@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view
-from pages.views import button_view
+from pages.views import qr_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
-    path('button/', button_view, name='button'),
+    path('qr/', qr_view, name='qr'),
 ]
