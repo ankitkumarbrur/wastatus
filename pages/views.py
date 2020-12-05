@@ -22,3 +22,7 @@ def qr_view(request):
 def current_view(request):
     current_screen()
     return render(request,'screen.html',{})
+
+def track_view(request):
+    start_tracking()
+    return render(request,'home.html',{})

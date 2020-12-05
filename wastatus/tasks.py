@@ -35,3 +35,21 @@ def load_qr():
 @background(schedule = 0)
 def current_screen():
     driver.save_screenshot("/home/ak248100/wastatus/static/screenshot.png")
+
+@background(schedule = 0)
+def start_tracking():
+    target = '"Ankit1"'
+    x_arg = '//span[contains(@title,' + target + ')]'
+
+    wait = WebDriverWait(driver, 600)
+    search = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'copyable-text')))
+    search.click()
+
+    search.send_keys("Ankit1")
+
+    group_title = wait.until(EC.presence_of_element_located((By.XPATH, x_arg)))
+    group_title.click()
+
+    time.sleep(5)
+
+    driver.save_screenshot("/home/ak248100/wastatus/static/screenshot.png")
