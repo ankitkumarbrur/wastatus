@@ -29,5 +29,3 @@ def fun():
     time.sleep(2)
 
     driver.save_screenshot('/home/ak248100/wastatus/static/screenshot.png')
-
-    driver.quit()
