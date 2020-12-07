@@ -8,12 +8,14 @@
 <body>
     <table style= "width: 100%;" border="2px solid black">
         <tr>
+            <th>Sr No</th>
             <th>Online</th>
             <th>Offline</th>
             <th>Duration</th>
         </tr>
     {% for element in lis %}
         <tr>
+            <td>{{ element.id}} </td>
             <td>{{ element.online}} </td>
             <td>{{ element.offline}} </td>
             <td>{{ element.duration}}</td>
