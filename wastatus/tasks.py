@@ -56,7 +56,7 @@ def start_tracking():
     print("Tracking")
     
     status = False
-    target = '"Ankit1"'
+    target = '"Riddhi"'
     x_arg = '//span[contains(@title,' + target + ')]'
 
     wait = WebDriverWait(driver, 600)
