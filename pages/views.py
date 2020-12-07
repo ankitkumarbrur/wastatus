@@ -11,6 +11,8 @@ import shlex
 import os
 import time
 
+from status.models import Status
+
 # Create your views here.
 @never_cache
 def home_view(request):
@@ -30,9 +32,13 @@ def qr_view(request):
 @never_cache
 def current_view(request):
     current_screen()
-    return render(request,'screen.html',{})
+    return render(request,'home.html',{})
 
 @never_cache
 def track_view(request):
     start_tracking()
     return render(request,'home.html',{})
+
+def status_view(request):
+    lis = Status.objects.all()
+    return render(request,'status.html',{'lis':lis})

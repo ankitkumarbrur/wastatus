@@ -24,12 +24,17 @@ from pages.views import home_view
 from pages.views import qr_view
 from pages.views import current_view
 from pages.views import background_view
+from pages.views import track_view
+from pages.views import status_view
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('qr/', qr_view, name='qr'),
     path('screen/',current_view, name='screen'),
-    path('tracking/',current_view, name='tracking'),
-    path('back/',background_view, name='back')
+    path('tracking/',track_view, name='tracking'),
+    path('back/',background_view, name='back'),
+    path('status/',status_view, name='status')
 ]+ static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

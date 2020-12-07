@@ -11,7 +11,11 @@ import time
 import sys
 import os
 
+from datetime import datetime
 import boto3
+
+from django.utils.timezone import get_current_timezone
+from status.models import Status
 
 print('BACKGROUND TASK')
 
@@ -22,6 +26,8 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 
 driver = webdriver.Chrome(executable_path="/home/ak248100/wastatus/wastatus/chromedriver", options=chrome_options)
+# driver = webdriver.Chrome(r"C:\Users\Ankit\Documents\Django\projects\wastatus\wastatus\chromedriver.exe")
+
 
 @background(schedule = 0)
 def load_qr():
@@ -47,6 +53,9 @@ def current_screen():
 
 @background(schedule = 0)
 def start_tracking():
+    print("Tracking")
+    
+    status = False
     target = '"Ankit1"'
     x_arg = '//span[contains(@title,' + target + ')]'
 
@@ -61,6 +70,32 @@ def start_tracking():
 
     time.sleep(5)
 
-    driver.save_screenshot("/home/ak248100/wastatus/static/screenshot.png")
-    s3_client = boto3.client('s3', aws_access_key_id='AKIAYC7ISQDUY2HJSMM4', aws_secret_access_key= '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')
-    response = s3_client.upload_file('/home/ak248100/wastatus/static/screenshot.png', 'ankitwstatus', 'screenshot.png')
+    while (True):
+        if(driver.find_elements_by_xpath('.//span[@title = "online"]') and status == False):
+            status = True
+
+            print('fun')
+            on = datetime.now(tz=get_current_timezone())
+
+            print(target + ' came online at ' + on.strftime('%H:%M:%S'))
+
+        elif(not(driver.find_elements_by_xpath('.//span[@title = "online"]')) and status == True ):
+            status = False
+
+            off = datetime.now(tz=get_current_timezone())
+            
+            diff = off-on
+
+            Status.objects.create(online=on,offline=off,duration=diff)
+
+            print(target + ' went offline at ' + off.strftime('%H:%M:%S'))
+        elif(datetime.now().minute % 2 == 0 and datetime.now().second == 0):
+            print('ping')
+            element = driver.find_elements_by_xpath('.//div[@title = "Menu"]')
+            element[1].click()
+
+    driver.quit()
+
+    # driver.save_screenshot("/home/ak248100/wastatus/static/screenshot.png")
+    # s3_client = boto3.client('s3', aws_access_key_id='AKIAYC7ISQDUY2HJSMM4', aws_secret_access_key= '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')
+    # response = s3_client.upload_file('/home/ak248100/wastatus/static/screenshot.png', 'ankitwstatus', 'screenshot.png')
