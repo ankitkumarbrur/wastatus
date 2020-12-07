@@ -63,7 +63,7 @@ def start_tracking():
     search = wait.until(EC.presence_of_element_located((By.CLASS_NAME, '_1awRl')))
     search.click()
 
-    search.send_keys("Riddhi")
+    search.send_keys("Ankit1")
 
     group_title = wait.until(EC.presence_of_element_located((By.XPATH, x_arg)))
     group_title.click()
