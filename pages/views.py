@@ -24,7 +24,7 @@ def background_view(request):
 @never_cache
 def qr_view(request):
     load_qr()
-    time.sleep(5)
+    time.sleep(8)
     return render(request,'home.html',{})
 
 @never_cache
