@@ -51,7 +51,7 @@ def start_tracking():
     x_arg = '//span[contains(@title,' + target + ')]'
 
     wait = WebDriverWait(driver, 600)
-    search = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'copyable-text')))
+    search = wait.until(EC.presence_of_element_located((By.CLASS_NAME, '_1awRl')))
     search.click()
 
     search.send_keys("Ankit1")
