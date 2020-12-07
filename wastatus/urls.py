@@ -28,4 +28,4 @@ urlpatterns = [
     path('screen/',current_view, name='screen'),
     path('tracking/',current_view, name='tracking'),
     path('back/',background_view, name='back')
-]
+]+ static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
